@@ -18,7 +18,6 @@ const Extension = imports.misc.extensionUtils.getCurrentExtension();
 
 const PrayTimes = Extension.imports.PrayTimes;
 const HijriCalendarKuwaiti = Extension.imports.HijriCalendarKuwaiti;
-const Convenience = Extension.imports.convenience;
 const PrefsKeys = Extension.imports.prefs_keys;
 
 const Azan = GObject.registerClass(
@@ -42,7 +41,7 @@ class Azan extends PanelMenu.Button {
     this._opt_concise_list = null;
     this._opt_hijriDateAdjustment = null;
 
-    this._settings = Convenience.getSettings();
+    this._settings = ExtensionUtils.getSettings();
     this._bindSettings();
     this._loadSettings();
 

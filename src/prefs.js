@@ -7,6 +7,7 @@ const PrayTimes = Me.imports.PrayTimes;
 const Convenience = Me.imports.convenience;
 const PrefsKeys = Me.imports.prefs_keys;
 const Config = imports.misc.config;
+const ExtensionUtils = imports.misc.extensionUtils;
 
 const IS_3_XX_SHELL_VERSION = Config.PACKAGE_VERSION.startsWith("3");
 
@@ -17,7 +18,7 @@ const PagePrefsGrid = new GObject.Class({
 
     _init: function(params) {
         this.parent(params);
-        this._settings = Convenience.getSettings();
+        this._settings = ExtensionUtils.getSettings();
         this.margin = this.row_spacing = this.column_spacing = 10;
         this._rownum = 0;
     },
@@ -219,7 +220,7 @@ const AzanPrefsWidget = new GObject.Class({
     _init: function(params) {
         this.parent(params);
         this.set_orientation(Gtk.Orientation.VERTICAL);
-        this._settings = Convenience.getSettings();
+        this._settings = ExtensionUtils.getSettings();
 
         let stack = new Gtk.Stack({
             transition_type: Gtk.StackTransitionType.SLIDE_LEFT_RIGHT,
