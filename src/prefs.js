@@ -4,7 +4,6 @@ const Gio = imports.gi.Gio;
 const Params = imports.misc.params;
 const Me = imports.misc.extensionUtils.getCurrentExtension();
 const PrayTimes = Me.imports.PrayTimes;
-const Convenience = Me.imports.convenience;
 const PrefsKeys = Me.imports.prefs_keys;
 const Config = imports.misc.config;
 const ExtensionUtils = imports.misc.extensionUtils;
